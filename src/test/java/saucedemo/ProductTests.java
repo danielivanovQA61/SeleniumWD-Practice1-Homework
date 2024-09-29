@@ -65,10 +65,10 @@ public class ProductTests extends BaseTest {
         driver.findElement(By.xpath("//button[@data-test='finish']")).click();
         driver.findElement(By.xpath("//a[@data-test='shopping-cart-link']")).click();
 
-        // Check if the anchor element has no children using XPath
+        // Check if the anchor element has no children using XPath / No child elements = no products in cart
         WebElement anchorWithNoChildren = driver.findElement(By.xpath("//a[@data-test='shopping-cart-link' and not(node())]"));
 
-        // Assert that the anchor has no children
+        // Assert that the cart has no products
         Assertions.assertNotNull(anchorWithNoChildren, "Anchor element should have no children.");
     }
 }
